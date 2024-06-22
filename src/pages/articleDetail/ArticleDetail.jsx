@@ -95,7 +95,7 @@ const ArticleDetail = () => {
 						</p>
 					</div>
 
-					<CommentContainer className="mt-10" />
+					<CommentContainer className="mt-10" logginedUserId="a" />
 				</article>
 
 				<SuggestedPosts
