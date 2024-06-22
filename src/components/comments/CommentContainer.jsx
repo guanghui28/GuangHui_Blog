@@ -50,6 +50,12 @@ const CommentContainer = ({ className, logginedUserId }) => {
 		setAffectedComment(null);
 	};
 
+	const deleteCommentHandler = (commentId) => {
+		setComments((prevComments) =>
+			prevComments.filter((comment) => comment._id !== commentId)
+		);
+	};
+
 	return (
 		<div className={`${className}`}>
 			<CommentForm btnLabel="Send" formSubmitHandler={addCommentHandler} />
@@ -64,6 +70,7 @@ const CommentContainer = ({ className, logginedUserId }) => {
 						setAffectedComment={setAffectedComment}
 						addComment={addCommentHandler}
 						updateComment={updateCommentHandler}
+						deleteComment={deleteCommentHandler}
 					/>
 				))}
 			</div>
