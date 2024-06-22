@@ -3,13 +3,14 @@ import { images } from "../../constants";
 import CommentForm from "./CommentForm";
 const Comment = ({
 	comment,
+	parentId = null,
 	logginedUserId,
 	affectedComment,
 	setAffectedComment,
 	addComment,
 	updateComment,
 	deleteComment,
-	parentId = null,
+	replies,
 }) => {
 	const isUserLoggined = Boolean(logginedUserId);
 	const commentBelongsToUser = logginedUserId === comment.user._id;
@@ -99,6 +100,25 @@ const Comment = ({
 						}
 						formCancelHandler={() => setAffectedComment(null)}
 					/>
+				)}
+
+				{replies.length > 0 && (
+					<div className="">
+						{replies.map((reply) => (
+							<Comment
+								key={reply._id}
+								addComment={addComment}
+								affectedComment={affectedComment}
+								setAffectedComment={setAffectedComment}
+								comment={reply}
+								deleteComment={deleteComment}
+								logginedUserId={logginedUserId}
+								updateComment={updateComment}
+								parentId={comment._id}
+								replies={[]} // only two level nested
+							/>
+						))}
+					</div>
 				)}
 			</div>
 		</div>

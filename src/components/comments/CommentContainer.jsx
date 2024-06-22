@@ -15,11 +15,19 @@ const CommentContainer = ({ className, logginedUserId }) => {
 		})();
 	}, []);
 
-	console.log(comments);
+	const getRepliesHandler = (commentId) => {
+		return comments
+			.filter((comment) => comment.parent === commentId)
+			.sort((a, b) => {
+				return (
+					new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+				);
+			});
+	};
 
 	const addCommentHandler = (value, parent = null, replyOnUser = null) => {
 		const newComment = {
-			_id: "10",
+			_id: Math.random().toString(),
 			user: {
 				_id: "a",
 				name: "Mohammad Rezaii",
@@ -28,7 +36,7 @@ const CommentContainer = ({ className, logginedUserId }) => {
 			post: "1",
 			parent,
 			replyOnUser,
-			createdAt: "2022-12-31T17:22:05.092+0000",
+			createdAt: new Date().toISOString(),
 		};
 
 		setComments((prev) => [newComment, ...prev]);
@@ -71,6 +79,7 @@ const CommentContainer = ({ className, logginedUserId }) => {
 						addComment={addCommentHandler}
 						updateComment={updateCommentHandler}
 						deleteComment={deleteCommentHandler}
+						replies={getRepliesHandler(comment._id)}
 					/>
 				))}
 			</div>
