@@ -1,7 +1,11 @@
 import HomePage from "./pages/HomePage";
 
 const App = () => {
-	return <HomePage />;
+	return (
+		<div className="font-opensans">
+			<HomePage />
+		</div>
+	);
 };
 
 export default App;

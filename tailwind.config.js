@@ -2,7 +2,19 @@
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				primary: "#1565D8",
+				dark: {
+					hard: "#0d2436",
+					soft: "#183b56",
+				},
+			},
+			fontFamily: {
+				opensans: ["'Open Sans'", "sans-serif"],
+				roboto: ["'Roboto'", "sans-serif"],
+			},
+		},
+		plugins: [],
 	},
-	plugins: [],
 };
