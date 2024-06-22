@@ -6,10 +6,10 @@ const Hero = () => {
 		<section className="container mx-auto flex flex-col px-5 py-5 lg:flex-row">
 			{/* right side */}
 			<div className="mt-10 lg:w-1/2">
-				<h1 className="font-roboto text-3xl text-center font-bold text-dark-soft md:text-5xl lg:text-left max-w-[540px]">
+				<h1 className="font-roboto text-3xl font-bold text-dark-soft text-center md:text-5xl lg:text-4xl xl:text-5xl lg:text-left max-w-[540px] mx-auto">
 					Read the most interesting articles
 				</h1>
-				<p className="text-dark-light mt-4 text-center md:text-xl lg:text-left">
+				<p className="text-dark-light mt-4 text-center md:text-xl lg:text-left lg:text-base xl:text-xl">
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum,
 					illo possimus deserunt quos vel, praesentium unde repellendus iure
 					voluptatem officia repudiandae eaque perferendis soluta amet
@@ -32,10 +32,10 @@ const Hero = () => {
 					</button>
 				</div>
 				<div className="flex mt-4 flex-col lg:flex-row lg:items-start lg:flex-nowrap lg:gap-x-4 lg:mt-7">
-					<span className="text-dark-light font-semibold italic lg:mt-4">
+					<span className="text-dark-light font-semibold italic lg:mt-4 lg:text-sm xl:text-base">
 						Popular Tags:
 					</span>
-					<ul className="flex flex-wrap gap-2.5 mt-3">
+					<ul className="flex flex-wrap gap-2.5 mt-3 lg:text-sm xl:text-base">
 						<li className="rounded-lg bg-primary bg-opacity-10 px-3 py-1.5 text-primary font-bold">
 							Design
 						</li>
