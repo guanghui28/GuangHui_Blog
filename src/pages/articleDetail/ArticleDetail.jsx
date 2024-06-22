@@ -3,6 +3,7 @@ import BreadCrumb from "../../components/BreadCrumb";
 import { images } from "../../constants";
 import MainLayout from "../../layout/MainLayout";
 import SuggestedPosts from "./container/SuggestedPosts";
+import CommentContainer from "../../components/comments/CommentContainer";
 
 const breadCrumbsData = [
 	{
@@ -93,6 +94,8 @@ const ArticleDetail = () => {
 							harum, voluptatum illo? Ab veniam quidem eum similique?
 						</p>
 					</div>
+
+					<CommentContainer className="mt-10" />
 				</article>
 
 				<SuggestedPosts
