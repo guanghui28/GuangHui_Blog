@@ -32,6 +32,22 @@ const CommentContainer = ({ className, logginedUserId }) => {
 		};
 
 		setComments((prev) => [newComment, ...prev]);
+		setAffectedComment(null);
+	};
+
+	const updateCommentHandler = (value, commentId) => {
+		const updatedComments = comments.map((comment) => {
+			if (comment._id === commentId) {
+				return {
+					...comment,
+					desc: value,
+				};
+			}
+			return comment;
+		});
+
+		setComments(updatedComments);
+		setAffectedComment(null);
 	};
 
 	return (
@@ -47,6 +63,7 @@ const CommentContainer = ({ className, logginedUserId }) => {
 						affectedComment={affectedComment}
 						setAffectedComment={setAffectedComment}
 						addComment={addCommentHandler}
+						updateComment={updateCommentHandler}
 					/>
 				))}
 			</div>
