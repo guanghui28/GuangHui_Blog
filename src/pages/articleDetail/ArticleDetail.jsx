@@ -4,6 +4,7 @@ import { images } from "../../constants";
 import MainLayout from "../../layout/MainLayout";
 import SuggestedPosts from "./container/SuggestedPosts";
 import CommentContainer from "../../components/comments/CommentContainer";
+import SocialShareButtons from "../../components/SocialShareButtons";
 
 const breadCrumbsData = [
 	{
@@ -98,12 +99,29 @@ const ArticleDetail = () => {
 					<CommentContainer className="mt-10" logginedUserId="a" />
 				</article>
 
-				<SuggestedPosts
-					header="Latest Articles"
-					posts={postsData}
-					tags={tagsData}
-					className="mt-8 lg:mt-0 lg:max-w-xs"
-				/>
+				<div>
+					<SuggestedPosts
+						header="Latest Articles"
+						posts={postsData}
+						tags={tagsData}
+						className="mt-8 lg:mt-0 lg:max-w-xs"
+					/>
+
+					<div className="mt-7">
+						<h2 className="font-roboto font-medium text-dark-hard mb-4 md:text-xl">
+							Share on:
+						</h2>
+
+						<SocialShareButtons
+							url={encodeURI(
+								"https://fullstack.edu.vn/blog/thoi-gian-va-dong-luc.html"
+							)}
+							title={encodeURIComponent(
+								"Client-side and Server-side explanation"
+							)}
+						/>
+					</div>
+				</div>
 			</section>
 		</MainLayout>
 	);
